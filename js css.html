@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first jquery</title>
+    <style>
+      .clicked {
+        -webkit-transition: background-color 2s, font-size 2s;
+      }
+      .orange {
+        background-color: orange;
+        font-size:4em;
+      }
+    </style>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+
+
+      $(document).ready(function(){
+
+        $("h1").click(function(){
+          $("h1").toggleClass("orange");
+        });
+      });
+
+
+    </script>
+  </head>
+  <body>
+    <h1 class="clicked">I am an unstyled h1... or am I?</h1>
+  </body>
+</html>

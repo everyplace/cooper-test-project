@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first jquery</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <style>
+
+      div {
+        float:left;
+      }
+
+      .hidden {
+        display:none;
+      }
+
+      .button {
+        width:256px;
+        height:256px;
+        background-image:url(button.png);
+      }
+
+
+      .light {
+        width:600px;
+        height:800px;
+        background-image:url(light-bulb-on.png);
+      }
+
+      .light.off {
+        background-image:url(light-bulb-off.png);
+      }
+
+    </style>
+    <script>
+
+
+      $(document).ready(function(){
+
+        $(".button").click(function(){
+          console.log("the button was clicked");
+          $(".light").toggleClass("off");
+        });
+
+      });
+
+
+    </script>
+  </head>
+  <body>
+
+    <div class="button"></div>
+    <div class="light off"></div>
+
+  </body>
+</html>

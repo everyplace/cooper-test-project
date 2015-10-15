@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first jquery</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <style>
+
+      div {
+        float:left;
+      }
+
+      .hidden {
+        display:none;
+      }
+
+      .switch {
+        width:615px;
+        height:821px;
+        background-image:url(switch.jpg);
+      }
+
+      .switch#onPosition {
+        -webkit-transform:rotate(180deg);
+      }
+
+      .light {
+        width:600px;
+        height:800px;
+      }
+
+      .light#offLight {
+        background-image:url(light-bulb-off.png);
+      }
+
+      .light#onLight {
+        background-image:url(light-bulb-on.png);
+      }
+
+    </style>
+    <script>
+
+
+      $(document).ready(function(){
+
+        $(".switch#onPosition").click(function(){
+          console.log("the on switch was clicked to turn the light off");
+          $("#offPosition").removeClass("hidden");
+          $("#onPosition").addClass("hidden");
+          $("#offLight").removeClass("hidden");
+          $("#onLight").addClass("hidden");
+        });
+
+        $(".switch#offPosition").click(function(){
+          console.log("the off switch was clicked to turn the light on");
+          $("#offPosition").addClass("hidden");
+          $("#onPosition").removeClass("hidden");
+          $("#offLight").addClass("hidden");
+          $("#onLight").removeClass("hidden");
+        });
+      });
+
+
+    </script>
+  </head>
+  <body>
+
+    <div class="switch hidden" id="onPosition"></div>
+    <div class="switch" id="offPosition"></div>
+    <div class="light hidden" id="onLight"></div>
+    <div class="light" id="offLight"></div>
+
+  </body>
+</html>

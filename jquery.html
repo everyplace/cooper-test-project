@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My first jquery</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <style>
+
+      nav {
+        display:none;
+      }
+
+      .visible {
+        display:block;
+      }
+
+    </style>
+    <script>
+
+
+      $(document).ready(function(){
+
+        $("h1").click(function(){
+          console.log("you clicked on the h1!");
+          $("nav").addClass("visible");
+        });
+
+
+        $("li:first-child").click(function(){
+          console.log("you clicked on the first list item!");
+          alert("yay!");
+        });
+
+
+        $("li:last-child").click(function(){
+          console.log("you clicked on the last list item!");
+        });
+
+        $("span").click(function(){
+          console.log("you clicked on the close button!");
+          $("nav").removeClass("visible");
+        });
+
+
+      });
+
+
+    </script>
+  </head>
+  <body>
+    <h1>main menu</h1>
+    <nav>
+      <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+      </ul>
+      <span>close nav</span>
+    </nav>
+  </body>
+</html>
